@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="100%" height="500">
+  <defs>
+    <style>
+      .bordado {
+        fill: none;
+        stroke: #4A143B;
+        stroke-width: 2.2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 1 3; /* pontinhos sutis */
+      }
+      .bordado-contorno {
+        fill: none;
+        stroke: #4A143B;
+        stroke-width: 2.2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .fumaca {
+        fill: none;
+        stroke: #FFB3AB;
+        stroke-width: 2.2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0.9;
+      }
+      .base {
+        stroke: #111830;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+      }
+      .frase {
+        fill: #111830;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 15px;
+        letter-spacing: 0.02em;
+      }
+      .nota {
+        fill: #FFB3AB;
+        font-family: Georgia, serif;
+      }
+    </style>
+  </defs>
+
+  <!-- Fundo papiro -->
+  <rect width="600" height="500" fill="#F5EFE3"/>
+
+  <!-- Linha de base (midnight blue) -->
+  <line x1="70" y1="410" x2="530" y2="410" class="base"/>
+
+  <!-- ===== LIVROS ===== -->
+  <!-- Livro de baixo -->
+  <path d="M150 370 Q160 365 300 365 Q440 365 450 370 L450 405 Q440 410 300 410 Q160 410 150 405 Z"
+        class="bordado-contorno"/>
+  <path d="M150 388 Q300 385 450 388" class="bordado"/>
+
+  <!-- Livro de cima -->
+  <path d="M180 330 Q190 325 300 325 Q410 325 420 330 L420 365 Q410 370 300 370 Q190 370 180 365 Z"
+        class="bordado-contorno"/>
+  <path d="M180 348 Q300 345 420 348" class="bordado"/>
+
+  <!-- ===== CANECA ===== -->
+  <!-- Corpo da caneca -->
+  <path d="M250 250 Q248 245 255 245 L345 245 Q352 245 350 250 L350 325 Q348 330 340 330 L260 330 Q252 330 250 325 Z"
+        class="bordado-contorno"/>
+  <!-- Detalhe interno -->
+  <path d="M275 245 Q275 285 275 330" class="bordado" opacity="0.4"/>
+  <!-- Alça -->
+  <path d="M350 260 Q385 255 390 280 Q395 310 350 315" class="bordado-contorno"/>
+
+  <!-- ===== FUMAÇA QUE VIRA MÚSICA ===== -->
+  <!-- Fumaça subindo da caneca -->
+  <path d="M300 245 Q315 215 300 190 Q285 165 300 140 Q315 115 300 90"
+        class="fumaca">
+    <animate attributeName="d" dur="8s" repeatCount="indefinite"
+      values="
+        M300 245 Q315 215 300 190 Q285 165 300 140 Q315 115 300 90;
+        M300 245 Q285 215 300 190 Q315 165 300 140 Q285 115 300 90;
+        M300 245 Q315 215 300 190 Q285 165 300 140 Q315 115 300 90
+      "/>
+  </path>
+
+  <!-- Notas musicais formadas pela fumaça -->
+  <text x="290" y="85" class="nota" font-size="38">𝄢</text>
+  <text x="335" y="70" class="nota" font-size="28">♩</text>
+  <text x="370" y="55" class="nota" font-size="26">♪</text>
+
+  <!-- ===== FRASE ===== -->
+  <text x="300" y="460" text-anchor="middle" class="frase">
+    An information scientist creating wibbly-wobbly, timey-wimey... stuff!
+  </text>
+</svg>
